@@ -6,7 +6,21 @@
         padding: 0;
         border-width: 0;
       }
+      .embed-responsive {
+        position: relative;
+        display: block;
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+      }
     </style>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
     <meta property="og:title" content="Shubham Singhal Resume" />
     <meta property="og:image" content="assets/image/shubham.png" />
     <meta property="og:description" content="Software Development Enthusiast" />
@@ -15,11 +29,19 @@
   </head>
 
   <body>
-    <iframe
+    <!--<iframe
       src="assets/pdf/ShubhamSinghalResume.pdf"
       width="100%"
       height="100%"
     >
-    </iframe>
+    </iframe>-->
+    <div class="embed-responsive" style="padding-bottom: 150%">
+      <object
+        data="assets/pdf/ShubhamSinghalResume.pdf"
+        type="application/pdf"
+        width="100%"
+        height="100%"
+      ></object>
+    </div>
   </body>
 </html>
