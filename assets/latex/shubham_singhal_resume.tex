@@ -1,0 +1,438 @@
+\documentclass[10pt,a4paper]{article}
+
+% =========================================================
+% PACKAGES
+% =========================================================
+
+\usepackage[
+    a4paper,
+    top=1.6cm,
+    bottom=1.6cm,
+    left=1.8cm,
+    right=1.8cm
+]{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{microtype}
+
+% =========================================================
+% COLORS
+% =========================================================
+
+\definecolor{primary}{RGB}{28,28,28}
+\definecolor{secondary}{RGB}{90,90,90}
+\definecolor{rulecolor}{RGB}{180,180,180}
+\definecolor{companyrule}{RGB}{215,215,215}
+\definecolor{linkcolor}{RGB}{45,90,135}
+
+% =========================================================
+% HYPERLINKS
+% =========================================================
+
+\usepackage[
+    colorlinks=true,
+    urlcolor=linkcolor,
+    linkcolor=linkcolor
+]{hyperref}
+
+% ATS-friendly text extraction
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% =========================================================
+% GLOBAL STYLE
+% =========================================================
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+
+\linespread{1.06}
+\raggedbottom
+
+% =========================================================
+% SECTION STYLE
+% =========================================================
+
+\titleformat{\section}
+  {\normalsize\bfseries\color{primary}}
+  {}
+  {0pt}
+  {\MakeUppercase}
+  [\vspace{3pt}\color{rulecolor}\titlerule]
+
+\titlespacing*{\section}
+  {0pt}
+  {14pt}
+  {8pt}
+
+% =========================================================
+% BULLETS
+% =========================================================
+
+\setlist[itemize]{
+    leftmargin=1.3em,
+    itemsep=6pt,
+    topsep=5pt,
+    parsep=1pt,
+    partopsep=0pt
+}
+
+% =========================================================
+% CUSTOM COMMANDS
+% =========================================================
+
+\newcommand{\company}[4]{%
+    \begin{tabularx}{\textwidth}{@{}Xr@{}}
+        {\large\textbf{#1}} &
+        {\small\textbf{#3}} \\[2pt]
+
+        {\textit{\color{secondary}#2}} &
+        {\small\textit{\color{secondary}#4}}
+    \end{tabularx}
+    \vspace{5pt}
+}
+
+\newcommand{\companydivider}{%
+    \par\vspace{7pt}%
+    \noindent
+    {\color{companyrule}\rule{\textwidth}{0.35pt}}
+    \par
+    \vspace{10pt}%
+}
+
+\newcommand{\skillrow}[2]{%
+    \textbf{#1} & #2 \\
+}
+
+\newcommand{\resumelink}[2]{%
+    \href{#1}{\textcolor{linkcolor}{\textbf{#2}}}
+}
+
+% =========================================================
+% DOCUMENT
+% =========================================================
+
+\begin{document}
+
+% =========================================================
+% HEADER
+% =========================================================
+
+\begin{center}
+
+    {\fontsize{21}{23}\selectfont
+    \textbf{SHUBHAM SINGHAL}} \\[5pt]
+
+    {\normalsize
+    \textbf{Senior Software Engineer}
+    \enspace $\vert$ \enspace
+    Distributed Systems
+    \enspace $\vert$ \enspace
+    Backend Platforms
+    \enspace $\vert$ \enspace
+    AI-Native Engineering
+    } \\[7pt]
+
+    {\small
+    \textcolor{secondary}{Bengaluru, India}
+    \enspace $\vert$ \enspace
+    \resumelink{mailto:shubhamsinghal.coder@gmail.com}
+    {shubhamsinghal.coder@gmail.com}
+    \enspace $\vert$ \enspace
+    \textcolor{secondary}{+91 72082 77045}
+    \enspace $\vert$ \enspace
+    \resumelink{https://www.linkedin.com/in/shubhampsinghal/}{LinkedIn}
+    \enspace $\vert$ \enspace
+    \resumelink{https://github.com/singhalshubham89}{GitHub}
+    }
+
+\end{center}
+
+\vspace{-1pt}
+
+% =========================================================
+% SUMMARY
+% =========================================================
+
+\section{Summary}
+
+Senior Software Engineer with \textbf{8+ years of experience} designing and
+scaling distributed systems and business-critical backend platforms.
+Led multi-engineer initiatives from ambiguous problem discovery through
+architecture and production rollout, delivering outcomes including
+\textbf{\$4M+ business impact}, \textbf{80\% latency reduction}, and
+multi-day operational workflows reduced to hours.
+
+\vspace{5pt}
+
+Data-driven engineer focused on measurable outcomes, observability,
+production readiness, architectural trade-offs, and leveraging
+\textbf{AI and automation} to improve engineering productivity.
+
+% =========================================================
+% EXPERIENCE
+% =========================================================
+
+\section{Experience}
+
+% ---------------------------------------------------------
+% UBER
+% ---------------------------------------------------------
+
+\company
+{Uber}
+{Senior Software Engineer}
+{Jun 2022 -- Present}
+{Bengaluru, India}
+
+{\small
+\textbf{Selected Technologies:}
+Go, Java, Kafka, Redis, Apache Pinot, MySQL, gRPC,
+Docker, Kubernetes, Distributed Systems, AI Workflows
+}
+
+\vspace{7pt}
+
+\textbf{Technical Leadership:}
+Led initiatives across teams of up to \textbf{8 engineers} as Merchant Growth
+technical lead and later as \textbf{Policy Authoring Lead and cross-team SME}
+for Content and Policy Authoring. Drove architecture, design reviews,
+mentoring, collaborative problem solving, metrics, alerting, production
+readiness, and data-driven engineering practices.
+
+\vspace{6pt}
+
+\begin{itemize}
+
+    \item
+    \textbf{Personalized Merchant Growth Platform:}
+    Led an extensible recommendation platform serving
+    \textbf{$\sim$2M merchants}, combining batch-generated insights,
+    real-time eligibility, ranking, A/B experimentation, and business
+    monitoring; drove \textbf{$\sim$\$4M in business impact}.
+
+    \item
+    \textbf{Chargeback Platform Redesign:}
+    Redesigned a platform processing \textbf{$\sim$100K cases/day} across
+    \textbf{30--40 signals and multiple upstream systems}, reducing eligibility
+    determination from \textbf{$\sim$3 days to $\sim$1 hour}.
+    Led ERD/POC, architecture alignment, production rollout, shadow validation,
+    correctness monitoring, alerting, and dispute workflows.
+
+    \item
+    \textbf{Cancellation Refund Bleed:}
+    Proactively identified \textbf{$\sim$\$1M in annual historical refund leakage}
+    while working on a separate cancellation-validation initiative.
+    Uncovered a fraud-detection gap, redirected the project toward the
+    higher-impact root cause, and reduced the problematic cancellation pattern
+    by \textbf{$\sim$60\%}.
+
+    \item
+    \textbf{AI Policy Authoring Platform:}
+    Led development and productionization of a natural-language policy
+    authoring system covering requirement discovery, exception handling,
+    policy generation, staging publication, and production-log validation.
+    Reduced authoring time from \textbf{$\sim$14 days to $\sim$1 day} and
+    demonstrated throughput by authoring
+    \textbf{17 policies in one day with $\sim$20 authors}.
+
+    \item
+    \textbf{AI Content Safety System:}
+    Designed and productionized an AI-powered validation system using code,
+    configuration, content-dependency, and production-traffic signals to
+    classify changes as safe, soft-blocked, or hard-blocked.
+    Validated \textbf{$\sim$250K nodes} and blocked
+    \textbf{$\sim$6.6K unsafe deletions} during a 220K-node bulk operation,
+    mitigating a failure mode previously associated with
+    \textbf{$\sim$7 production incidents, including an L5}.
+
+    \item
+    \textbf{Content Segmentation Platform:}
+    Replaced bespoke integrations across
+    \textbf{$\sim$20 segmentation attributes} with a reusable,
+    configuration-driven hydration model.
+    Reduced onboarding from
+    \textbf{$\sim$30 to $\sim$7 engineering days ($\sim$77\%)},
+    onboarded \textbf{6 new attributes}, and established a single source of
+    truth for legacy migration.
+
+    \item
+    \textbf{Tier-1 Performance Optimization:}
+    Prioritized bottlenecks using an impact-vs-effort phased strategy and
+    reduced endpoint latency from
+    \textbf{$\sim$3s to $\sim$600ms (80\%)} through parallel execution,
+    computation reuse, caching, and hot-shard query optimization.
+
+\end{itemize}
+
+% =========================================================
+% PAGE 2
+% =========================================================
+
+\newpage
+
+\companydivider
+
+% ---------------------------------------------------------
+% FLIPKART
+% ---------------------------------------------------------
+
+\company
+{Flipkart}
+{Software Development Engineer II}
+{Feb 2021 -- Jun 2022}
+{Bengaluru, India}
+
+\begin{itemize}
+
+   \item Built \textbf{event-driven pricing and promotion systems for Flipkart's Big Billion Days}, partnering with product and business teams to support high-scale sale events and deliver initiatives contributing to \textbf{$\sim$\$1.5M+ annual revenue impact}.
+
+    \item
+    Recognized with the \textbf{Instant Karma Award} and team awards
+    for engineering impact.
+
+\end{itemize}
+
+\companydivider
+
+% ---------------------------------------------------------
+% JIO
+% ---------------------------------------------------------
+
+\company
+{Jio}
+{Software Development Engineer}
+{Nov 2020 -- Feb 2021}
+{Hyderabad, India}
+
+\begin{itemize}
+
+    \item
+    Owned backend development for the
+    \textbf{Jio Health Hub web platform}, designing and delivering
+    backend APIs and services supporting core healthcare workflows.
+
+\end{itemize}
+
+\companydivider
+
+% ---------------------------------------------------------
+% CLSA
+% ---------------------------------------------------------
+
+\company
+{CLSA}
+{Research Application Analyst}
+{Jul 2018 -- Nov 2020}
+{Pune, India}
+
+\begin{itemize}
+
+    \item
+    Built and maintained internal backend applications supporting
+    enterprise workflows, including an \textbf{event-management platform}
+    and company-wide communication chatbot used by
+    \textbf{2,000+ employees}.
+
+    \item
+    Designed and developed an \textbf{instance monitoring system} providing
+    centralized visibility into application instances, hosts, and overall
+    system health, improving operational monitoring and issue detection
+    across deployed services.
+
+\end{itemize}
+
+% =========================================================
+% TECHNICAL SKILLS
+% =========================================================
+
+\section{Technical Skills}
+
+\renewcommand{\arraystretch}{1.35}
+
+\begin{tabularx}{\textwidth}{@{}p{3.8cm}X@{}}
+
+\skillrow
+{\mbox{Languages}}
+{Go, Java, Python, C++}
+
+\skillrow
+{\mbox{Distributed Systems}}
+{Microservices, Event-Driven Architecture, System Design,
+Multithreading, REST, gRPC, Apache Thrift}
+
+\skillrow
+{\mbox{Data \& Streaming}}
+{Kafka, Apache Flink, Apache Pinot, MySQL, Redis,
+Elasticsearch, NoSQL, Database Schema Design}
+
+
+\skillrow
+{\mbox{Infrastructure}}
+{Docker, Kubernetes, Grafana, Arize, Jaeger, Distributed Tracing,
+Performance Optimization, Production Reliability, Incident Response,
+A/B Experimentation}
+
+
+\end{tabularx}
+
+% =========================================================
+% RECOGNITION
+% =========================================================
+
+\section{Recognition}
+
+\begin{itemize}
+
+    \item
+    \textbf{Uber:} Recognized as a \textbf{Top 25 Interviewer} and received
+    multiple Kudos recognizing impact across
+    \textbf{Go Get It, One Uber, Do the Right Thing, and Build with Heart}.
+
+    \item
+    \textbf{Flipkart:} Received the \textbf{Instant Karma Award}
+    and team awards for engineering impact.
+
+    \item
+    \textbf{CLSA:} Received the \textbf{Star Award -- Q1 2020}.
+
+\end{itemize}
+
+% =========================================================
+% EDUCATION
+% =========================================================
+
+\section{Education}
+
+\begin{tabularx}{\textwidth}{@{}Xr@{}}
+
+\textbf{Bachelor of Engineering -- Computer Science}
+&
+\textbf{2014 -- 2018}
+\\[2pt]
+
+Pune University
+&
+Pune, India
+\\[2pt]
+
+{\small
+First Class with Distinction
+$\vert$
+77.4\%
+$\vert$
+Top 5 in College
+}
+&
+
+\end{tabularx}
+
+\end{document}
